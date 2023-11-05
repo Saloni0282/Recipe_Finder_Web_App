@@ -1,0 +1,150 @@
+/* .container {
+  padding: 20px;
+}
+
+.longcard {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+}
+
+.img img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 5px;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  margin: 10px 0;
+}
+
+.ingredients {
+  margin-top: 20px;
+}
+
+.ingredients ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.instructions {
+  margin: 20px 0;
+}
+
+nutritions {
+  margin: 20px 0;
+} */
+
+
+/* recipeinfo.css */
+
+/* 
+
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .img img {
+    width: 100%;
+  }
+} */
+
+
+/* recipeinfo.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.longcard {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    background: #fff;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.img img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.details {
+    flex: 1;
+}
+
+.name {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+h6 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.ingredients ul, .nutritions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-auto-columns: min-content;
+}
+
+.ingredients li, .nutritions li {
+   
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.save {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

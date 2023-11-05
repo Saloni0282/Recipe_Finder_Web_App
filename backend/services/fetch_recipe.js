@@ -1,15 +1,13 @@
 const axios = require('axios');
 
 const fetchRecipe = async (req, res, next) => {
-    const { query, cuisine } = req.body
-    var endpoint = "complexSearch"
-    try {
+    const { query, cuisine } = req.query;
+    const endpoint = 'complexSearch';
 
-        const response = await axios.get(`https://api.spoonacular.com/recipes/${endpoint}?apiKey=${process.env.recipe_api_key}`, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
+    try {
+        const response = await axios.get(`https://api.spoonacular.com/recipes/${endpoint}`, {
             params: {
+                apiKey: process.env.recipe_api_key,
                 query: query,
                 cuisine: cuisine,
             },
@@ -23,6 +21,11 @@ const fetchRecipe = async (req, res, next) => {
         res.status(500).json({ error: 'An error occurred while fetching recipe data.' });
     }
 };
+
+module.exports = {
+    fetchRecipe,
+};
+
 
 const recipeDetails = async (req, res, next) => {
     const { id } = req.params;
@@ -50,7 +53,6 @@ const recipeDetails = async (req, res, next) => {
         });
 
         const recipeData = response.data;
-        const ingredientsNames = [];
         const instructions = recipeData.instructions
         const title = recipeData.title
         const image = recipeData.image
@@ -58,15 +60,19 @@ const recipeDetails = async (req, res, next) => {
         const summary = recipeData.summary
 
         const steps = await recipeData.analyzedInstructions[0].steps;
+        const uniqueIngredients = new Set();
+
         steps.forEach((step) => {
             if (step.ingredients) {
-
                 step.ingredients.forEach((ingredient) => {
-
-                    ingredientsNames.push(ingredient.name);
+                    uniqueIngredients.add(ingredient.name);
                 });
             }
         });
+
+        // Convert the Set back to an array
+        const ingredientsNames = Array.from(uniqueIngredients);
+
         const allData = { ingredientsNames, instructions, title, image, id, summary, nutritionsNames }
         res.status(200).json(allData);
     } catch (error) {
