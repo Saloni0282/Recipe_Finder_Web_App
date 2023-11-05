@@ -94,7 +94,7 @@ const FetchAllRecipes = () => {
             <input
                 type="text"
                 placeholder="Search by recipe name"
-                value={searchQuery}
+                
                 onChange={(e) => search(e.target.value)}
             />
 
