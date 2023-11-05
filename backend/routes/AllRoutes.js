@@ -8,7 +8,7 @@ const {Auth}=require("../middlewares/Auth")
 AllRoutes.post("/login", login);
 AllRoutes.post("/signup", signup);
 AllRoutes.get('/check',Auth,home)
-AllRoutes.get("/get", fetchRecipe);
+AllRoutes.get("/get", Auth, fetchRecipe);
 AllRoutes.get("/info/:id", Auth, nutritionalInfo, recipeDetails);
 AllRoutes.post("/save",Auth , savedRecipe);
 AllRoutes.get("/getRecipe",Auth , getSavedRecipe);
