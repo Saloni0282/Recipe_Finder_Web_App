@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: calc(33.33% - 20px); /* Three cards per row with some gap */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.title h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.summary {
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.more_info,
+.save {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more_info {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.save {
+  background-color: #ffcc00;
+  color: #333;
+}
+
+.more_info:hover,
+.save:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+
+/* Add this CSS to your existing CSS file or create a new one */
+.nsr {
+    text-align: center;
+    margin: auto;
+    font-size: 24px;
+    color: #666;
+    margin-top: 50vh;
+}
