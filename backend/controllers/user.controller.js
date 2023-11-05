@@ -52,10 +52,14 @@ const login = async (req, res) => {
 
 }
 
+const home = (req, res) => {
+    res.send("hello")
+}
 
 
 module.exports = {
     login,
-    signup
+    signup,
+    home
 
 }
